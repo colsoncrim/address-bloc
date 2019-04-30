@@ -53,6 +53,10 @@ const inquirer = require('inquirer');
     process.exit();
   }
 
+  getContactCount() {
+    return this.contacts.length;
+  }
+
   getDate() {
     this.clear();
     let x = moment().format('MMMM Do YYYY, h:mm:ss a');
