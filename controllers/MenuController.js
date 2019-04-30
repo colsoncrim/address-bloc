@@ -23,6 +23,9 @@ const inquirer = require('inquirer');
          case "Add new contact":
           this.addContact();
           break;
+         case "Get date":
+          this.getDate();
+          break;
          case "Exit":
           this.exit();
          default:
@@ -48,5 +51,12 @@ const inquirer = require('inquirer');
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit();
+  }
+
+  getDate() {
+    this.clear();
+    let x = moment().format('MMMM Do YYYY, h:mm:ss a');
+    console.log(x);
+    this.main();
   }
  }
