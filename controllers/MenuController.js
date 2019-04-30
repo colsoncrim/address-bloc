@@ -21,16 +21,19 @@ const inquirer = require('inquirer');
      inquirer.prompt(this.mainMenuQuestions).then((response) => {
        switch(response.mainMenuChoice){
          case "Add new contact":
-          this.addContact();
-          break;
+            this.addContact();
+            break;
          case "Get date":
-          this.getDate();
-          break;
+            this.getDate();
+            break;
+         case "Remind me":
+            this.remindMe();
+            break;
          case "Exit":
-          this.exit();
+            this.exit();
          default:
-          console.log("Invalid input");
-          this.main();
+            console.log("Invalid input");
+            this.main();
         }
       })
       .catch((err) => {
@@ -61,6 +64,12 @@ const inquirer = require('inquirer');
     this.clear();
     let x = moment().format('MMMM Do YYYY, h:mm:ss a');
     console.log(x);
+    this.main();
+  }
+
+  remindMe() {
+    this.clear();
+    console.log("Learning is a lifelong pursuit.");
     this.main();
   }
  }
