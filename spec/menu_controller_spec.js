@@ -16,4 +16,10 @@ const MenuController = require("../controllers/MenuController");
       expect(this.menu.getContactCount()).toBe(1)
      });
    });
+
+   describe("#remindMe()", () => {
+     it("should return the string specified in the method", () => {
+       expect(this.menu.remindMe()).toBe("Learning is a life-long pursuit");
+     });
+   });
  });
